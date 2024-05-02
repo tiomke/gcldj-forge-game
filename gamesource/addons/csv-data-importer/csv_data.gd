@@ -10,6 +10,7 @@ extends Resource
 			setup()
 
 var _data:= {}  #column name to index
+var _data_by_key := {}
 var _auto_setup = false
 var _initialed = false
 ## _data getter
@@ -37,7 +38,10 @@ func setup():
 			var index = field_indexs[key]
 			var value = row[index]
 			row_data[key] = value
-		_data[str(primary_key)]= row_data
+		_data[primary_key]= row_data
+		var key = row_data.get("Key")
+		if key:
+			_data_by_key[key] = row_data
 	headers.clear()
 	records.clear()
 	
@@ -45,7 +49,10 @@ func setup():
 
 
 func fetch(primary_key):
-	return _data.get(str(primary_key))
+	var ret = _data.get(primary_key)
+	if not ret:
+		ret = _data_by_key.get(primary_key)
+	return ret
 
 
 func keys():

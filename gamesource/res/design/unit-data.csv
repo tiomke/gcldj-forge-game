@@ -1,5 +1,6 @@
-Id,名称,类型
-id,Name,Type
-int,str,int
-1000001,护卫舰,0
-1001001,红宝石,1
+Id,键,名称,类型
+Id,Key,Name,Type
+int,str,str,int
+1000001,HuWeiJian,护卫舰,0
+1001001,RedStone,红宝石,1
+1001002,BlueStone,蓝宝石,1
