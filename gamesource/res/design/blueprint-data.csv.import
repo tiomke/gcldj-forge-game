@@ -1,0 +1,16 @@
+[remap]
+
+importer="citizenl.godot-csv-importer"
+type="Resource"
+uid="uid://bhad2sqcybqei"
+path="res://.godot/imported/blueprint-data.csv-dd978d21a9bc8793425aa1f8180560c4.tres"
+
+[deps]
+
+source_file="res://res/design/blueprint-data.csv"
+dest_files=["res://.godot/imported/blueprint-data.csv-dd978d21a9bc8793425aa1f8180560c4.tres"]
+
+[params]
+
+delimiter=0
+describe_headers=true

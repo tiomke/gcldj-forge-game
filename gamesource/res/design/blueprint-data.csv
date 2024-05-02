@@ -1,0 +1,4 @@
+Id,名称,产出单位Id,输入材料
+id,Name,OutputId,InputIds
+int,str,int,json
+20000001,护卫舰蓝图,10000001,[]
