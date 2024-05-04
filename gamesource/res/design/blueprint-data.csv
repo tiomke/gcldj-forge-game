@@ -1,4 +1,5 @@
-Id,名称,产出单位Id,输入材料
-Id,Name,OutputId,InputIds
-int,str,str,json
-20000001,护卫舰蓝图,HuWeiJian,"[""RedStone"",""BlueStone""]"
+Id,键,名称,产出单位Id,合成所需宝石,合成所需作战单位
+Id,Key,Name,OutputId,InputGems,InputUnits
+int,str,str,str,json,json
+2000001,HuWei,护卫舰蓝图,HuWeiJian,"[[""RedStone"",1],[""BlueStone"",1]]",[]
+2000002,JieJi,截击舰蓝图,JieJiJian,"[[""RedStone"",1],[""BlueStone"",1]]","[""HuWeiJian"",""HuWeiJian""]"

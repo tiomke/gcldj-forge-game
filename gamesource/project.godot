@@ -16,7 +16,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Design="*res://script/global/designloader.gd"
+G="*res://script/global/global.gd"
 
 [editor_plugins]
 

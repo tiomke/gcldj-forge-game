@@ -1,4 +1,4 @@
-extends Node
+class_name Design
 # 加载策划表
 
 # 策划表配置
@@ -6,25 +6,41 @@ extends Node
 #const DESIGNDATA_PATH_BLUEPRINT:String = "res://res/design/blueprint-data.csv"
 
 const DesignDataFileTable = {
-	"Unit": "res://res/design/unit-data.csv", #DESIGNDATA_PATH_UNIT,
-	"BluePrint": "res://res/design/blueprint-data.csv",#DESIGNDATA_PATH_BLUEPRINT
+	"unit": "res://res/design/unit-data.csv", #DESIGNDATA_PATH_UNIT,
+	"gem":"res://res/design/gem-data.csv",
+	"blueprint": "res://res/design/blueprint-data.csv",#DESIGNDATA_PATH_BLUEPRINT
 }
 
 # 全局策划表
 static var DesignData = {}
 
-func GetCfg(tableName, key):
+static func get_tbl(tableName):
+	return DesignData[tableName]
+
+# 获取 tableName 表中键为 key 的记录
+# 返回一个字典，字典中的键为列名，例如 {"Key":"Value",...}
+static func getcfg(tableName, key):
 	if not DesignData[tableName]:
 		return
 	return DesignData[tableName].fetch(key)
 
-func LoadAllDesignData():
+static func get_tid(tableName,key):
+	if not DesignData[tableName]:
+		return
+	return DesignData[tableName].id2key(key)
+
+static func get_key(tableName,tid):
+	if not DesignData[tableName]:
+		return
+	return DesignData[tableName].key2id(tid)
+
+static func LoadAllDesignData():
 	for designName in DesignDataFileTable.keys():
 		var path = DesignDataFileTable[designName]
 		var res = ResourceLoader.load(path)
 		res.setup()
 		DesignData[designName] = res
 		
-func _ready():
+static func _static_init():
 	LoadAllDesignData()
 

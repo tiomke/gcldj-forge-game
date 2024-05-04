@@ -11,6 +11,8 @@ extends Resource
 
 var _data:= {}  #column name to index
 var _data_by_key := {}
+var _id2key := {} # id 和 key 的映射
+var _key2id := {}
 var _auto_setup = false
 var _initialed = false
 ## _data getter
@@ -42,6 +44,8 @@ func setup():
 		var key = row_data.get("Key")
 		if key:
 			_data_by_key[key] = row_data
+			_id2key[primary_key] = key
+			_key2id[key] = primary_key
 	headers.clear()
 	records.clear()
 	
@@ -54,6 +58,11 @@ func fetch(primary_key):
 		ret = _data_by_key.get(primary_key)
 	return ret
 
+func id2key(id):
+	return _id2key[id]
+
+func key2id(key):
+	return _key2id[key]
 
 func keys():
 	return _data.keys()

@@ -9,8 +9,11 @@ func _ready():
 	#var shooter = example.fetch(1000001)#fetch row data by primary key
 	#print(shooter)
 	#print(example.fetch("RedStone"))
-	#var data = Design.GetCfg("Unit","RedStone")
-	var data = Design.GetCfg("BluePrint",20000001)
-	#print(data.InputIds[0])
-	#var data = Design.GetCfg("Unit",1001001)
+	#var data = Design.getcfg("unit","RedStone")
+	var data = Design.getcfg("blueprint","HuWei")
 	print(data)
+	var list = data["InputGems"]
+	print("list[0][0]==RedStone",list[0][0]=="RedStone")
+	C.dprint("debug","debug print")
+	#print(data.InputIds[0])
+	#var data = Design.getcfg("unit",1001001)

@@ -1,11 +1,10 @@
 extends Node
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var Player:Personal
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+# 一些全局初始化工作都放这里
+func _init():
+	C.dprint("debug","init Global")
+	Player = Personal.new()
+	
