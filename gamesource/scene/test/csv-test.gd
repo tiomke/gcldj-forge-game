@@ -10,10 +10,10 @@ func _ready():
 	#print(shooter)
 	#print(example.fetch("RedStone"))
 	#var data = Design.getcfg("unit","RedStone")
-	var data = Design.getcfg("blueprint","HuWei")
+	var data = Design.getcfg("blueprint","ji_feng")
 	print(data)
 	var list = data["InputGems"]
-	print("list[0][0]==RedStone",list[0][0]=="RedStone")
+	print("list[0][0]==blue_green",list[0][0]=="blue_green")
 	C.dprint("debug","debug print")
 	#print(data.InputIds[0])
 	#var data = Design.getcfg("unit",1001001)

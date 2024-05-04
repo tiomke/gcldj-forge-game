@@ -1,4 +1,12 @@
 Id,键,名称,类型,品阶
 Id,Key,Name,Type,Level
-int,str,str,int,int
-1000001,HuWeiJian,护卫舰,0,1
+int,str,str,str,int
+1000001,ji_feng,疾风号,speed,1
+1000002,kuang_biao,狂飙号,speed,2
+1000003,feng_bao,风暴号,speed,3
+1000004,gang_tie,钢铁号,heavy,1
+1000005,bao_lei,堡垒号,heavy,2
+1000006,wu_wei,无畏号,heavy,3
+1000007,jiao_tu,狡兔号,strategy,1
+1000008,tian_ying,天鹰号,strategy,2
+1000009,xiong_shi,雄狮号,strategy,3
