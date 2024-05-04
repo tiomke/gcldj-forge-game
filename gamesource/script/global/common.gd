@@ -1,6 +1,7 @@
 class_name C
 
 
+static var ROAMAN_NUM_LIST:=["0","I","II","III","IV","V","VI","VII","VIII","IX","X"]
 static func _static_init():
 	dpset("debug") # 开启调试print
 	dprint("debug","debug print open")

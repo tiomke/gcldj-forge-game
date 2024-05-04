@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7xbykq8n6evx"]
+
+[ext_resource type="Script" path="res://scene/test/ui-test.gd" id="1_wc12l"]
+
+[node name="Ui-test" type="VBoxContainer"]
+script = ExtResource("1_wc12l")

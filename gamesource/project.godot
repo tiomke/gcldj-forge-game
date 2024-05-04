@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Gamesource"
+run/main_scene="res://scene/demo.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -19,9 +20,27 @@ config/icon="res://icon.svg"
 
 G="*res://script/global/global.gd"
 
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
+window/ios/allow_high_refresh_rate=false
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+window/ios/suppress_ui_gesture=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg", "res://addons/gloot/plugin.cfg")
+
+[gui]
+
+theme/custom_font="res://res/font/BoutiqueBitmap9x9_1.6.ttf"
+theme/default_font_antialiasing=0
 
 [rendering]
 
