@@ -2,7 +2,7 @@
 
 class_name UnitProperty
 
-var _tid:=0 # 模板id
+var _tid:String="" # 模板id
 var _id:=0 # 实例id
 var _fightProp:=[] # 战斗属性 [num1,num2,num3,...]
 var _grade:=1 # 等级
@@ -26,7 +26,7 @@ func set_id(id):
 	_id = id
 	
 func set_fightprop(index,value):
-	_fightProp[index]=value
+	_fightProp.insert(index,value)
 func get_fightprop():
 	return _fightProp
 	

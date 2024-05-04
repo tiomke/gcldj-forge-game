@@ -14,14 +14,13 @@ func reset():
 	
 func add_blueprint(tid):
 	_blueprintDict[tid]=true
-
+func has_blueprint(tid):
+	return _blueprintDict.has(tid)
 #region 宝石操作
-func add_gem(tid):
-	_gemDict[tid]=(_gemDict[tid] or 0)+1
+func add_gem(tid,cnt=1):
+	_gemDict[tid]=_gemDict.get(tid,0)+cnt
 func get_gem_count(tid):
-	if not _gemDict.get(tid):
-		return 0
-	return _gemDict[tid]
+	return _gemDict.get(tid,0)
 func set_gem_count(tid,cnt):
 	_gemDict[tid]=cnt
 #endregion

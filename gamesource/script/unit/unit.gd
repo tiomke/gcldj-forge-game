@@ -10,7 +10,7 @@ static var _idSn:=0 # 实例化序列号
 # 生成自增实例id
 static var _sn:
 	get:
-		_idSn += _idSn
+		_idSn += 1
 		return _idSn
 #endregion
 
@@ -39,13 +39,14 @@ var fightprop:
 #endregion
 
 # 根据模板id实例化一个对象出来
-func _init(tid):
-	var time = G.now
+func _init(_tid):
+	var time = C.now
 	_property = UnitProperty.new()
 	_property.set_createtime(time)
-	_property.set_tid(tid)
+	_property.set_tid(_tid)
 	_property.set_id(_sn)
 	_property.set_fightprop(1,1) # 初始 1,1 TODO 统一放到一个数值计算的地方
+	_property.set_fightprop(2,1) # 初始 1,1 TODO 统一放到一个数值计算的地方
 	_update_fightscore()
 
 

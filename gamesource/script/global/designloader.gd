@@ -14,23 +14,20 @@ const DesignDataFileTable = {
 # 全局策划表
 static var DesignData = {}
 
-static func get_tbl(tableName):
-	return DesignData[tableName]
-
 # 获取 tableName 表中键为 key 的记录
 # 返回一个字典，字典中的键为列名，例如 {"Key":"Value",...}
 static func getcfg(tableName, key):
-	if not DesignData[tableName]:
+	if not DesignData.has(tableName):
 		return
 	return DesignData[tableName].fetch(key)
 
 static func get_tid(tableName,key):
-	if not DesignData[tableName]:
+	if not DesignData.has(tableName):
 		return
 	return DesignData[tableName].id2key(key)
 
 static func get_key(tableName,tid):
-	if not DesignData[tableName]:
+	if not DesignData.has(tableName):
 		return
 	return DesignData[tableName].key2id(tid)
 
