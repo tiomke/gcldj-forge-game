@@ -14,6 +14,7 @@ enum GridSelectType{
 }
 
 static var ROAMAN_NUM_LIST:=["0","I","II","III","IV","V","VI","VII","VIII","IX","X"]
+static var UNIT_TYPE_NAME_DICT:={"speed":"敏捷","heavy":"重装","strategy":"诡谲"}
 static func _static_init():
 	dpset("debug") # 开启调试print
 	dprint("debug","debug print open")

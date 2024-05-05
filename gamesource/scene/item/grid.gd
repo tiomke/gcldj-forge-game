@@ -16,14 +16,29 @@ class_name Grid extends Control
 @export var _bSelectDisable:bool
 
 var _tid:String
-var id:
-	get:
-		return _tid
-	set(v):
-		_tid = v
+var _id:int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cleargrid()
+	
+func get_tid():
+	return _tid
+func set_tid(tid):
+	_tid = tid
+
+func get_id():
+	return _id
+func set_id(id):
+	_id = id
+
+func get_parent_node():
+	return _parent
+
+func cleargrid():
+	C.dprint("debug","Grid:cleargrid>>",_tid,_id)
+	_tid = ""
+	_id = 0
 	num.text=""
 	img.texture = null
 	select.visible = false
@@ -32,11 +47,6 @@ func _ready():
 		print("button select disabled!")
 		button.disabled = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func set_select_type(eType):
 	_selectType = eType
 	
@@ -83,7 +93,8 @@ func disable(bDisable=true):
 #region 
 # load planet
 func show_planet_img(idx,bPirate=false):
-	id = str(idx)
+	set_tid(str(idx))
+	set_id(idx)
 	var path = "res://res/img/planet/{0}.png".format([idx])
 	if bPirate:
 		path = "res://res/img/planet/pirate.png"
@@ -91,19 +102,19 @@ func show_planet_img(idx,bPirate=false):
 	
 # load unit
 func show_unit_img(tid):
-	id = tid
+	set_tid(tid)
 	var data = Design.getcfg("unit",tid)
 	set_img(data["Path"])
 	
 # load gem	
 func show_gem_img(tid):
-	id = tid
+	set_tid(tid)
 	var data = Design.getcfg("gem",tid)
 	set_img(data["Path"])
 	
 # load blueprint
 func show_blueprint_img(tid):
-	id = tid
+	set_tid(tid)
 	var data = Design.getcfg("blueprint",tid)
 	if data["Type"] != "wash":
 		var unitTid = data["RelateKey"]
@@ -129,17 +140,19 @@ func on_click_left():
 		old.enable_select(false)
 	enable_select(true)
 	G.CrntSelectGrid = self
+	var node = G.get_gameplay_node().get_node("%GridDescriptArea")
+	node.show_desc(_selectType,_tid,_id)
 	C.dprint("debug","Grid:on_click_left>>CrntSelectGrid:",G.CrntSelectGrid)
 
 # 右键点击
 func on_click_right():
 	C.dprint("debug","Grid:on_click_right>>")
 	# 尝试把物品移动到相应的位置上
-	var play = get_tree().get_root().get_node("Demo")
+	var play = G.get_gameplay_node()
 	if play._crntStage == play.Stage.Forge:
-		G.ForgeAreaNode.assemble(_selectType,id)
+		G.get_forge_area().assemble(_selectType,_tid,_id)
 	elif play._crntStage == play.Stage.Fight:
-		#G.FightAreaNode.assemble(_selectType,id)
+		#G.FightAreaNode.assemble(_selectType,_tid)
 		pass
 
 # TODO 没找到让按钮响应左键和右键的方法，先土方法处理

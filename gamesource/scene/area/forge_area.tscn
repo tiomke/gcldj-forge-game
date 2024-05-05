@@ -85,12 +85,15 @@ theme_override_constants/separation = 10
 
 [node name="InputGrid" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
+_selectType = 5
 
 [node name="InputGrid2" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
+_selectType = 5
 
 [node name="InputGrid3" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
+_selectType = 5
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer"]
 layout_mode = 2
@@ -113,6 +116,7 @@ layout_mode = 2
 [node name="BlueprintGrid" parent="HBoxContainer/MarginContainer/CenterContainer" instance=ExtResource("2_ckpr7")]
 unique_name_in_owner = true
 layout_mode = 2
+_selectType = 7
 
 [node name="OutputMarginContainer" type="MarginContainer" parent="HBoxContainer"]
 unique_name_in_owner = true

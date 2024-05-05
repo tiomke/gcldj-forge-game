@@ -15,7 +15,8 @@ func reset():
 func add_blueprint(tid):
 	_blueprintDict[tid]=true
 func has_blueprint(tid):
-	return _blueprintDict.has(tid)
+	return true
+	# return _blueprintDict.has(tid)
 #region 宝石操作
 func add_gem(tid,cnt=1):
 	_gemDict[tid]=_gemDict.get(tid,0)+cnt
@@ -29,6 +30,8 @@ func add_unit(unit):
 	_unitDict[unit.id]=unit
 func rm_unit(unit):
 	_unitDict[unit.id]=null
+func get_unit(id):
+	return _unitDict.get(id)
 	
 
 	

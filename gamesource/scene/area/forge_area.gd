@@ -7,9 +7,11 @@ class_name ForgeArea extends CenterContainer
 @onready var need_unit_margin_container = %NeedUnitMarginContainer
 @onready var need_unit_container = %NeedUnitHBoxContainer
 
+var _crntBlueprintTid:String
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	G.ForgeAreaNode = self
+	# G.ForgeAreaNode = self
 	pass # Replace with function body.
 
 
@@ -17,13 +19,48 @@ func _ready():
 func _process(delta):
 	pass
 	
+func forge():
+	var unitList = []
+	for unitgrid in need_unit_container.get_children():
+		if unitgrid.visible and unitgrid.get_id() != 0:
+			var unit = G.Player.get_unit(unitgrid.get_id())
+			unitList.append(unit)
+	var bOk = Blueprint.craft(_crntBlueprintTid,unitList)
+	if bOk:
+		clear_area()
 
-func assemble(nType:C.GridSelectType,tid):
+func clear_area():
+	need_unit_margin_container.visible = false
+	for child in gem_container.get_children():
+		child.visible = false
+	blueprint_grid.cleargrid()
+	output_planet_grid.cleargrid()
+
+func assemble(nType:C.GridSelectType,tid,id):
 	C.dprint("debug","Grid:assemble>>selectType,gridid",nType,tid)
 	if nType == C.GridSelectType.PersonalBlueprint:
 		assemble_blueprint(tid)
+	elif nType == C.GridSelectType.PersonalUnit:
+		submit_unit(tid,id)
+	elif nType == C.GridSelectType.ForgeUnit:
+		clear_unit(id)
+
+# 放置单位	
+func submit_unit(tid,id):
+	for child in need_unit_container.get_children():
+		if child.visible and child.get_id() == 0:
+			child.set_id(id)
+			child.show_unit_img(tid)
+
+func clear_unit(id):
+	for child in need_unit_container.get_children():
+		if child.visible and child.get_id() == id:
+			child.cleargrid()
+
+
 # 放入蓝图
 func assemble_blueprint(tid):
+	_crntBlueprintTid = tid
 	# 先隐藏输入
 	for child in gem_container.get_children():
 		child.visible = false
@@ -59,3 +96,4 @@ func assemble_blueprint(tid):
 		for i in range(need_unit_container.get_child_count()):
 			var node = need_unit_container.get_child(i)
 			node.visible = i < inputunits.size()
+			node.cleargrid()

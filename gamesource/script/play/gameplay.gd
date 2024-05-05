@@ -29,15 +29,15 @@ enum Stage{
 var _crntStage:=Stage.Explore
 var _crntRound:=1 # 轮次，一次海盗算一个轮次
 var _crntTurn:=1 # 回合，一次选择算一个回合
-var _crntPlanets
+# var _crntPlanets
 
 #region Agenda 流程控制
-
+	
 func agenda_new_round():
 	pass
 	
 func agenda_new_turn():
-	pass
+	agenda_enter_planet()
 
 func agenda_enter_planet():
 	_crntStage = Stage.Explore
@@ -87,19 +87,29 @@ func exec_explore():
 		C.dprint("debug","Gameplaye:exec_explore>>nothing selected")
 		return
 	if selectGrid._selectType == C.GridSelectType.ExplorePlanet:
-		selectGrid._parent.drop_item()
+		selectGrid.get_parent_node().drop_item()
 		update_personal_info()
 		agenda_enter_forge()
+
 #endregion
 
 #region Forge
 func exec_forge():
-	pass
+	forge_area.forge()
+	update_personal_info()
 #endregion
 #region Fight
 func exec_fight():
 	pass
 #endregion
+
+
+func personal_init_gems():
+	for i in range(Design.GEM_TYPE_NUM):
+		var tid = Design.GEM_BASE_TID + i + 1
+		var key = Design.get_key("gem",tid)
+		G.Player.add_gem(key,10)
+	
 func switch_play_area():
 	main_tab_container.current_tab = _crntStage
 
@@ -175,9 +185,9 @@ func update_personal_unit():
 			heavylist.append(unit)
 		elif unitType == "strategy":
 			strategylist.append(unit)
-	speedlist.sort_custom(func(a, b): return a.fightscore > b.fightscore)
-	heavylist.sort_custom(func(a, b): return a.fightscore > b.fightscore)
-	strategylist.sort_custom(func(a, b): return a.fightscore > b.fightscore)
+	speedlist.sort_custom(func(a, b): return a._fightscore > b._fightscore)
+	heavylist.sort_custom(func(a, b): return a._fightscore > b._fightscore)
+	strategylist.sort_custom(func(a, b): return a._fightscore > b._fightscore)
 	
 	add_personal_unit(speedlist,speed_container)
 	add_personal_unit(heavylist,heavy_container)
@@ -186,10 +196,11 @@ func update_personal_unit():
 func add_personal_unit(list,container):
 	for unit in list:
 		var grid = G.GridScn.instantiate() as Grid
-		grid.set_select_type(C.GridSelectType.PersonalUnit)
-		grid.show_unit_img(unit.tid)
-		# TODO 还需要一些处理，grid现在没记录什么信息
 		container.add_child(grid)
+		grid.set_select_type(C.GridSelectType.PersonalUnit)
+		prints("grid,unit.tid",grid,unit.tid,unit.id)
+		grid.show_unit_img(unit.tid)
+		grid.set_id(unit.id)
 	
 
 func update_button():
@@ -207,24 +218,13 @@ func update_button():
 		button_1.visible = true
 		button_2.visible = false
 
-		
-# 分阶段
-	# 采集资源
-		# 刷资源
-		# 交互逻辑
-	# 机器锻造
-		# 交互逻辑
-	# 战斗
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#G.GameplayNode = self
+	personal_init_gems() # 开门送宝石
 	agenda_enter_planet()
 	update_personal_info()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_button_1_pressed():

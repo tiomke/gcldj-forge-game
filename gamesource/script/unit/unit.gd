@@ -33,6 +33,10 @@ var level:
 var createtime:
 	get:
 		return _property._createtime
+var fightscore:
+	get:
+		return _fightscore
+
 var fightprop:
 	get:
 		return _property.get_fightprop()
@@ -45,15 +49,15 @@ func _init(_tid):
 	_property.set_createtime(time)
 	_property.set_tid(_tid)
 	_property.set_id(_sn)
+	_property.set_fightprop(0,1) # 初始 1,1 TODO 统一放到一个数值计算的地方
 	_property.set_fightprop(1,1) # 初始 1,1 TODO 统一放到一个数值计算的地方
-	_property.set_fightprop(2,1) # 初始 1,1 TODO 统一放到一个数值计算的地方
 	_update_fightscore()
 
 
 # 给随机的一个维度值加一
 func upgrade():
-	var prop :Array = _property.get_fightprop()
-	var index = randi_range(1,prop.size())
+	var prop = _property.get_fightprop()
+	var index = randi_range(0,prop.size()-1)
 	_property.grade_up()
 	_property.set_fightprop(index,prop[index]+1)
 	_update_fightscore()
@@ -61,7 +65,7 @@ func upgrade():
 # 洗配置（将一部分数值从一个维度向另一个维度转移
 # 存在洗配置前后点数不变的情况
 func wash():
-	var prop:Array=_property.get_fightprop()
+	var prop = _property.get_fightprop()
 	var list = G.randfetch(prop.size(),2)
 	var prevalue1 = prop[list[0]]
 	var prevalue2 = prop[list[1]]
@@ -77,14 +81,14 @@ func _update_fightscore():
 	# 筹码*倍率
 	var prop = _property.get_fightprop()	
 	var dict := {} # [num]=cnt,统计各个面值的数量
-	for num in prop:
-		dict[num] = (dict[num] or 0) + 1
-	var fightscore = 0
+	for num in prop.values():
+		dict[num] = dict.get(num,0) + 1
+	var score = 0
 	for num in dict.keys():
 		var cnt = dict[num]
 		var chip = chiplist[cnt]
-		fightscore += (chip[0]+num*cnt)*chip[1] # 筹码累加，倍率相乘
-	_fightscore = fightscore
+		score += (chip[0]+num*cnt)*chip[1] # 筹码累加，倍率相乘
+	_fightscore = score
 
 
 

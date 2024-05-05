@@ -3,12 +3,14 @@ class_name Blueprint extends Entity
 
 # 物品合成
 # unitlist 是传入的作战单位列表，这个接口假设传进来的
-func craft(blueprintTid,unitlist=[]):
+static func craft(blueprintTid,unitlist=[]):
+	C.dprint("debug","blueprint:craft()>> bluprintTid:{0}".format([blueprintTid]))
 	# 判断玩家是否拥有这个蓝图
 	if not G.Player.has_blueprint(blueprintTid):
 		C.dprint("debug","blueprint:craft()>>no bluprint:{0}".format([blueprintTid]))
 		return false
 	var designData = Design.getcfg("blueprint",blueprintTid)
+	var sType = designData["Type"]
 	# 判断作战单位的数量和id是否都符合
 	var tidlist := []
 	for unit in unitlist:
@@ -35,22 +37,38 @@ func craft(blueprintTid,unitlist=[]):
 			C.dprint("debug","blueprint:craft()>>lack of gem !! blueprintTid:{0},\
 			gem key:{1},need gem cnt:{2},has gem cnt:{3}".format([blueprintTid,needtid,needcnt,cnt]))
 			return false
-	# 消耗单位和宝石
-	for unit in unitlist:
-		G.Player.rm_unit(unit)
+	# 消耗宝石
 	for input:Array in inputlist:
 		var needtid = input[0]
 		var needcnt = input[1]
 		var cnt = G.Player.get_gem_count(needtid)
 		G.Player.set_gem_count(needtid,cnt-needcnt)
-	# 合成新的物品
-	var unitTid = designData["OutputId"]
-	var unit = Unit.new(unitTid)
-	print("unit.id",unit.id)
-	G.Player.add_unit(unit)
+	if sType == "craft" or sType == "levelup":
+		# 消耗单位
+		for unit in unitlist:
+			G.Player.rm_unit(unit)
+		# 合成新的物品
+		var unitTid = designData["OutputId"]
+		if unitTid and !unitTid.is_empty():
+			var unit = Unit.new(unitTid)
+			print("unit.id",unit.id)
+			G.Player.add_unit(unit)
+	elif sType == "gradeup":
+		for unit in unitlist:
+			unit.upgrade()
+	elif sType == "wash":
+		for unit in unitlist:
+			unit.wash()
 
 	return true
 	
-	
+static func levelup(blueprintTid,unitlist=[]):
+	pass
+
+static func gradeup(blueprintTid,unitlist=[]):
+	pass
+
+static func wash(blueprintTid,unit):
+	pass
 	
 	

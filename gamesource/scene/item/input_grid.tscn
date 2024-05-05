@@ -61,6 +61,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 toggle_mode = true
+button_mask = 3
 flat = true
 
 [node name="Mask" type="ColorRect" parent="."]
