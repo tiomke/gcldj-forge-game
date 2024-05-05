@@ -1,21 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmq08ek4k7khp"]
+[gd_scene load_steps=6 format=3 uid="uid://cmq08ek4k7khp"]
 
-[ext_resource type="Texture2D" uid="uid://bd2oyf1xe122p" path="res://res/ui/Page1.png" id="1_ejdjs"]
+[ext_resource type="Script" path="res://script/play/gameplay.gd" id="1_ger6u"]
+[ext_resource type="Texture2D" uid="uid://du2odqpo18fij" path="res://res/img/background.png" id="2_fk4tm"]
 [ext_resource type="PackedScene" uid="uid://8xfood5i1s6i" path="res://scene/item/grid.tscn" id="2_qov8d"]
-[ext_resource type="PackedScene" uid="uid://bdnmtrltt7lpk" path="res://scene/area/forge_area.tscn" id="3_qegfq"]
+[ext_resource type="PackedScene" uid="uid://b547mwdkwfqa1" path="res://scene/area/forge_area.tscn" id="3_qegfq"]
+[ext_resource type="PackedScene" uid="uid://bdnmtrltt7lpk" path="res://scene/area/explore_area.tscn" id="4_u1wk1"]
 
 [node name="Demo" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_ger6u")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-modulate = Color(0.698039, 0.65098, 0.694118, 0.298039)
 custom_minimum_size = Vector2(960, 540)
 layout_mode = 2
 offset_right = 960.0
 offset_bottom = 540.0
-texture = ExtResource("1_ejdjs")
+texture = ExtResource("2_fk4tm")
 expand_mode = 1
 
 [node name="Container" type="HBoxContainer" parent="."]
@@ -29,8 +30,13 @@ custom_minimum_size = Vector2(220, 2.08165e-12)
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="Container/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 140)
+custom_minimum_size = Vector2(2.08165e-12, 120)
 layout_mode = 2
+
+[node name="TextureRect" type="ColorRect" parent="Container/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+color = Color(0.360784, 0.345098, 0.541176, 1)
 
 [node name="Label" type="Label" parent="Container/VBoxContainer/CenterContainer"]
 layout_mode = 2
@@ -41,85 +47,192 @@ text = "锻造！
 horizontal_alignment = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="Container/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 140)
+custom_minimum_size = Vector2(2.08165e-12, 160)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer/CenterContainer2"]
-custom_minimum_size = Vector2(220, 140)
+custom_minimum_size = Vector2(220, 160)
 layout_mode = 2
 
-[node name="TabBar" type="TabBar" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="BlueprintTabBar" type="TabBar" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-tab_count = 4
-tab_0/title = "建造"
-tab_1/title = "升级"
-tab_2/title = "合成"
-tab_3/title = "重置"
+tab_count = 3
+tab_0/title = "锻造"
+tab_1/title = "改进"
+tab_2/title = "重置"
 
-[node name="TabContainer" type="TabContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer"]
+[node name="BlueprintTabContainer" type="TabContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 tabs_visible = false
 
-[node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer"]
+[node name="MarginContainer" type="CenterContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer"]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer"]
 layout_mode = 2
-columns = 5
+theme_override_constants/h_separation = 30
+columns = 3
 
-[node name="Grid" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid1" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid2" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid3" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid4" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid5" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid6" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid7" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid8" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid9" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="MarginContainer2" type="CenterContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Grid2" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+[node name="GridContainer" type="GridContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/h_separation = 30
+columns = 3
+
+[node name="Grid1" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid2" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid3" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid4" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid5" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid6" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid7" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid8" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="Grid9" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_disable = true
+
+[node name="MarginContainer3" type="CenterContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Grid3" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+[node name="GridContainer" type="GridContainer" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer3"]
 layout_mode = 2
+theme_override_constants/h_separation = 30
+columns = 3
 
-[node name="Grid4" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid1" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer3/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
-
-[node name="Grid5" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
-layout_mode = 2
-
-[node name="Grid6" parent="Container/VBoxContainer/CenterContainer2/VBoxContainer/TabContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
-layout_mode = 2
+_disable = true
 
 [node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 140)
 layout_mode = 2
 theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="GridContainer" type="GridContainer" parent="Container/VBoxContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 20
+theme_override_constants/h_separation = 4
 theme_override_constants/v_separation = 20
-columns = 4
+columns = 5
 
 [node name="Grid" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid2" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid3" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid4" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid5" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid6" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="Grid7" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
+
+[node name="Grid8" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
+
+[node name="Grid9" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
+
+[node name="Grid10" parent="Container/VBoxContainer/MarginContainer/GridContainer" instance=ExtResource("2_qov8d")]
+layout_mode = 2
+_selectType = 1
+_bSelectDisable = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer"]
 layout_mode = 2
@@ -150,7 +263,6 @@ text = "3星距后将遭遇星际海盗"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Container"]
-custom_minimum_size = Vector2(740, 2.08165e-12)
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Container/VBoxContainer2"]
@@ -180,32 +292,33 @@ size_flags_horizontal = 3
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer"]
+[node name="SpeedHBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 40)
 layout_mode = 2
 
-[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer"]
@@ -229,32 +342,33 @@ size_flags_horizontal = 3
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer"]
+[node name="HeavyHBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 40)
 layout_mode = 2
 
-[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer2"]
@@ -278,35 +392,36 @@ size_flags_horizontal = 3
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer"]
+[node name="StrategyHBoxContainer" type="HBoxContainer" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 40)
 layout_mode = 2
 
-[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid2" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid3" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid4" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid5" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid6" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid7" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid8" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
-[node name="Grid9" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/HBoxContainer" instance=ExtResource("2_qov8d")]
+[node name="Grid9" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/VBoxContainer/HBoxContainer3"]
@@ -314,30 +429,32 @@ custom_minimum_size = Vector2(42, 2.08165e-12)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Container/VBoxContainer2"]
-custom_minimum_size = Vector2(2.08165e-12, 300)
+custom_minimum_size = Vector2(2.08165e-12, 280)
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="TabContainer" type="TabContainer" parent="Container/VBoxContainer2/MarginContainer"]
+[node name="MainTabContainer" type="TabContainer" parent="Container/VBoxContainer2/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 tabs_visible = false
 
-[node name="ForgeArea" parent="Container/VBoxContainer2/MarginContainer/TabContainer" instance=ExtResource("3_qegfq")]
+[node name="ExploreArea" parent="Container/VBoxContainer2/MarginContainer/MainTabContainer" instance=ExtResource("4_u1wk1")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Container/VBoxContainer2/MarginContainer/TabContainer"]
-visible = false
-custom_minimum_size = Vector2(720, 280)
-layout_mode = 2
-
-[node name="CenterContainer2" type="CenterContainer" parent="Container/VBoxContainer2/MarginContainer/TabContainer"]
+[node name="ForgeArea" parent="Container/VBoxContainer2/MarginContainer/MainTabContainer" instance=ExtResource("3_qegfq")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="CenterContainer3" type="CenterContainer" parent="Container/VBoxContainer2/MarginContainer/TabContainer"]
+[node name="CenterContainer2" type="CenterContainer" parent="Container/VBoxContainer2/MarginContainer/MainTabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="Container/VBoxContainer2/MarginContainer/MainTabContainer"]
 visible = false
 layout_mode = 2
 
@@ -345,12 +462,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="Container/VBoxContainer2/HBoxContainer"]
+[node name="Button1" type="Button" parent="Container/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "开始建造"
 
 [node name="Button2" type="Button" parent="Container/VBoxContainer2/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "继续航行"
+
+[connection signal="tab_changed" from="Container/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabBar" to="." method="_on_blueprint_tab_bar_tab_changed"]
+[connection signal="pressed" from="Container/VBoxContainer2/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer2/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

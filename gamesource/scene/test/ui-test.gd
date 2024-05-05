@@ -13,7 +13,7 @@ func _ready():
 	node.set_background_color(Color(0.5,0.5,0))
 	var tex = preload("res://addons/gloot/images/icon_item_slot.svg")
 	node.set_img(tex)
-	var tex2 = preload("res://res/img/planet.png")
+	var tex2 = preload("res://res/img/gem/blue.png")
 	node2.set_img(tex2)
 	node2.enable_select(true)
 	

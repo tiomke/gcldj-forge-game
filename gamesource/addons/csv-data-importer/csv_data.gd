@@ -59,10 +59,10 @@ func fetch(primary_key):
 	return ret
 
 func id2key(id):
-	return _id2key[id]
+	return _id2key.get(id)
 
 func key2id(key):
-	return _key2id[key]
+	return _key2id.get(key)
 
 func keys():
 	return _data.keys()

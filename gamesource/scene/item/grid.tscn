@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://8xfood5i1s6i"]
 
 [ext_resource type="Script" path="res://scene/item/grid.gd" id="1_1bd4m"]
-[ext_resource type="Texture2D" uid="uid://bokhocyhxbqah" path="res://res/img/planet.png" id="2_d0olr"]
+[ext_resource type="Texture2D" uid="uid://b4knox7g44ofw" path="res://res/img/gem/blue.png" id="2_u6am6"]
 
 [node name="Center" type="CenterContainer"]
-custom_minimum_size = Vector2(40, 40)
+custom_minimum_size = Vector2(36, 36)
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
@@ -33,6 +33,10 @@ theme_override_constants/margin_bottom = 2
 layout_mode = 2
 color = Color(0.364706, 0.345098, 0.556863, 1)
 
+[node name="BackImg" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+expand_mode = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 2
@@ -43,7 +47,7 @@ theme_override_constants/margin_bottom = 2
 [node name="Img" type="TextureRect" parent="MarginContainer/MarginContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-texture = ExtResource("2_d0olr")
+texture = ExtResource("2_u6am6")
 expand_mode = 1
 
 [node name="Num" type="Label" parent="MarginContainer"]
@@ -55,3 +59,15 @@ theme_override_font_sizes/font_size = 10
 text = "II"
 horizontal_alignment = 2
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+toggle_mode = true
+flat = true
+
+[node name="Mask" type="ColorRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.187176, 0.187176, 0.187176, 0.796078)

@@ -1,0 +1,99 @@
+[gd_scene load_steps=4 format=3 uid="uid://5vopdtgep8gi"]
+
+[ext_resource type="PackedScene" uid="uid://bn6b3x6ejxiw4" path="res://scene/item/planet_grid.tscn" id="1_6yrxs"]
+[ext_resource type="PackedScene" uid="uid://8xfood5i1s6i" path="res://scene/item/grid.tscn" id="1_tl5k3"]
+[ext_resource type="Script" path="res://scene/item/planet.gd" id="1_tspa7"]
+
+[node name="MarginContainer" type="MarginContainer"]
+offset_right = 148.0
+offset_bottom = 264.0
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+script = ExtResource("1_tspa7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+size_flags_vertical = 0
+text = "天狼星"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="PlanetGrid" parent="VBoxContainer/CenterContainer" node_paths=PackedStringArray("_parent") instance=ExtResource("1_6yrxs")]
+unique_name_in_owner = true
+layout_mode = 2
+_selectType = 3
+_parent = NodePath("../../..")
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "产出资源"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GemList" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Grid" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+layout_mode = 2
+
+[node name="Grid2" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+layout_mode = 2
+
+[node name="Grid3" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+layout_mode = 2
+
+[node name="Grid4" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+visible = false
+layout_mode = 2
+
+[node name="Grid5" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+visible = false
+layout_mode = 2
+
+[node name="Grid6" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+visible = false
+layout_mode = 2
+
+[node name="Grid7" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+visible = false
+layout_mode = 2
+
+[node name="Grid8" parent="VBoxContainer/ScrollContainer/CenterContainer/GemList" instance=ExtResource("1_tl5k3")]
+visible = false
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
+size_flags_vertical = 0
+text = "50%概率获得蓝图"
+horizontal_alignment = 1
+vertical_alignment = 1

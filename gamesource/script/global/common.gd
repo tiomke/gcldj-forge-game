@@ -1,5 +1,17 @@
 class_name C
 
+enum GridSelectType{
+	PersonalBlueprint, # 玩家拥有的蓝图
+	PersonalGem, # 玩家的宝石列表
+	PersonalUnit, # 玩家拥有的战舰
+	ExplorePlanet, # 探索时的星球
+	ExploreGem, # 探索时的宝石
+	ForgeUnit, # 锻造时的战舰
+	ForgeGem,# 锻造时的宝石
+	ForgeBlueprint,# 锻造时的蓝图
+	ForgeOutput,# 锻造的产出
+	FightUnit,# 战斗时的单位
+}
 
 static var ROAMAN_NUM_LIST:=["0","I","II","III","IV","V","VI","VII","VIII","IX","X"]
 static func _static_init():
@@ -10,7 +22,7 @@ static var now:
 	get:
 		return Time.get_unix_time_from_system()
 
-# 从 1-n 中随机选取k个值 
+# 从 1-n 中随机选取k个值，返回一个list 
 # generate by gpt-3.5
 static func randfetch(n, k):
 	var numbers = []
