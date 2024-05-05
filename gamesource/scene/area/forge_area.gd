@@ -24,7 +24,8 @@ func forge():
 	for unitgrid in need_unit_container.get_children():
 		if unitgrid.visible and unitgrid.get_id() != 0:
 			var unit = G.Player.get_unit(unitgrid.get_id())
-			unitList.append(unit)
+			if unit:
+				unitList.append(unit)
 	var bOk = Blueprint.craft(_crntBlueprintTid,unitList)
 	if bOk:
 		clear_area()
@@ -51,6 +52,7 @@ func submit_unit(tid,id):
 		if child.visible and child.get_id() == 0:
 			child.set_id(id)
 			child.show_unit_img(tid)
+			break
 
 func clear_unit(id):
 	for child in need_unit_container.get_children():

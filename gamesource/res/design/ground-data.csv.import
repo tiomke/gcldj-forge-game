@@ -1,0 +1,16 @@
+[remap]
+
+importer="citizenl.godot-csv-importer"
+type="Resource"
+uid="uid://de3hynkpefw6x"
+path="res://.godot/imported/ground-data.csv-94dff6dd778df7719af3761a39dd2d74.tres"
+
+[deps]
+
+source_file="res://res/design/ground-data.csv"
+dest_files=["res://.godot/imported/ground-data.csv-94dff6dd778df7719af3761a39dd2d74.tres"]
+
+[params]
+
+delimiter=0
+describe_headers=true

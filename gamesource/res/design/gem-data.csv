@@ -1,14 +1,14 @@
-Id,键,名称,权重,路径
+Id,键,名称,每个关卡权重,路径
 Id,Key,Name,Weight,Path
-int,str,str,int,str
-3000001,black,黑曜石 (黑色),1,res://res/img/gem/brown.png
-3000002,amber,琥珀 (黄色),1,res://res/img/gem/yellow.png
-3000003,blue_green,孔雀石 (蓝绿色),1,res://res/img/gem/blue.png
-3000004,purple,紫晶石 (紫色),1,res://res/img/gem/purple.png
-3000005,green,翡翠 (绿色),1,res://res/img/gem/green.png
-3000006,yellow,黄玉 (黄色),1,res://res/img/gem/orange.png
-3000007,blue,芙蓉石 (蓝色),1,res://res/img/gem/darkblue.png
-3000008,red,月长石 (红色),1,res://res/img/gem/red.png
-3000009,white,钻石 (无色),1,res://res/img/gem/white.png
-3000010,chip,机械核心,1,res://res/img/gem/chip.png
-3000011,gold,黄金,1,res://res/img/gem/gold.png
+int,str,str,json,str
+3000001,black,黑曜石 (黑色),"[8,8,8,8,8,8,8,8,8]",res://res/img/gem/brown.png
+3000002,amber,琥珀 (黄色),"[8,8,8,8,8,8,8,8,8]",res://res/img/gem/yellow.png
+3000003,blue_green,孔雀石 (蓝绿色),"[8,8,8,8,8,8,8,8,8]",res://res/img/gem/blue.png
+3000004,purple,紫晶石 (紫色),"[0,2,3,4,5,6,7,8,8]",res://res/img/gem/purple.png
+3000005,green,翡翠 (绿色),"[0,2,3,4,5,6,7,8,8]",res://res/img/gem/green.png
+3000006,yellow,黄玉 (黄色),"[0,2,3,4,5,6,7,8,8]",res://res/img/gem/orange.png
+3000007,blue,芙蓉石 (蓝色),"[0,0,1,2,3,4,5,6,6]",res://res/img/gem/darkblue.png
+3000008,red,月长石 (红色),"[0,0,1,2,3,4,5,6,6]",res://res/img/gem/red.png
+3000009,white,钻石 (无色),"[0,0,1,2,3,4,5,6,6]",res://res/img/gem/white.png
+3000010,chip,机械核心,"[0,0,0,0,0,0,0,0,0]",res://res/img/gem/chip.png
+3000011,gold,黄金,"[0,0,0,1,1,1,2,2,2]",res://res/img/gem/gold.png
