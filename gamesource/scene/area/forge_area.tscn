@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://b547mwdkwfqa1"]
+[gd_scene load_steps=4 format=3 uid="uid://b547mwdkwfqa1"]
 
 [ext_resource type="PackedScene" uid="uid://bi0os1ffum44y" path="res://scene/item/input_grid.tscn" id="1_21viq"]
+[ext_resource type="Script" path="res://scene/area/forge_area.gd" id="1_ftdj6"]
 [ext_resource type="PackedScene" uid="uid://bn6b3x6ejxiw4" path="res://scene/item/planet_grid.tscn" id="2_ckpr7"]
 
 [node name="ForgeArea" type="CenterContainer"]
 offset_right = 680.0
 offset_bottom = 280.0
+script = ExtResource("1_ftdj6")
 
 [node name="Background" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(680, 280)
@@ -37,44 +39,60 @@ size_flags_vertical = 4
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="InputGrid" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
-layout_mode = 2
-
-[node name="InputGrid2" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
-layout_mode = 2
-
-[node name="InputGrid3" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
-layout_mode = 2
-
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="GemHBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="InputGrid" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/GemHBoxContainer" instance=ExtResource("1_21viq")]
+layout_mode = 2
+_selectType = 6
+
+[node name="InputGrid2" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/GemHBoxContainer" instance=ExtResource("1_21viq")]
+layout_mode = 2
+_selectType = 6
+
+[node name="InputGrid3" parent="HBoxContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/GemHBoxContainer" instance=ExtResource("1_21viq")]
+layout_mode = 2
+_selectType = 6
+
+[node name="NeedUnitMarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/MarginContainer2/ScrollContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="NeedUnitHBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="InputGrid" parent="HBoxContainer/VBoxContainer/MarginContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
+[node name="InputGrid" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
 
-[node name="InputGrid2" parent="HBoxContainer/VBoxContainer/MarginContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
+[node name="InputGrid2" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
 
-[node name="InputGrid3" parent="HBoxContainer/VBoxContainer/MarginContainer2/ScrollContainer/HBoxContainer" instance=ExtResource("1_21viq")]
+[node name="InputGrid3" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer/ScrollContainer/CenterContainer/NeedUnitHBoxContainer" instance=ExtResource("1_21viq")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/NeedUnitMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "锻造所需要的机器："
@@ -92,21 +110,24 @@ horizontal_alignment = 1
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="PlanetGrid" parent="HBoxContainer/MarginContainer/CenterContainer" instance=ExtResource("2_ckpr7")]
+[node name="BlueprintGrid" parent="HBoxContainer/MarginContainer/CenterContainer" instance=ExtResource("2_ckpr7")]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+[node name="OutputMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer2"]
+[node name="Label" type="Label" parent="HBoxContainer/OutputMarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 text = "产物"
 horizontal_alignment = 1
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/MarginContainer2"]
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/OutputMarginContainer"]
 layout_mode = 2
 
-[node name="PlanetGrid" parent="HBoxContainer/MarginContainer2/CenterContainer" instance=ExtResource("2_ckpr7")]
+[node name="OutputPlanetGrid" parent="HBoxContainer/OutputMarginContainer/CenterContainer" instance=ExtResource("2_ckpr7")]
+unique_name_in_owner = true
 layout_mode = 2

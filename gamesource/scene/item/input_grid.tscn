@@ -68,3 +68,5 @@ visible = false
 custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 color = Color(0.187176, 0.187176, 0.187176, 0.796078)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

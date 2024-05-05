@@ -15,6 +15,13 @@ class_name Grid extends Control
 @export var _disable:bool
 @export var _bSelectDisable:bool
 
+var _tid:String
+var id:
+	get:
+		return _tid
+	set(v):
+		_tid = v
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	num.text=""
@@ -59,6 +66,9 @@ func set_frame_color(color):
 func set_background_color(color):
 	background.color = color
 
+func set_mask_color(color):
+	mask.color = color
+
 func enable_select(bSelect):
 	select.visible = bSelect
 
@@ -73,6 +83,7 @@ func disable(bDisable=true):
 #region 
 # load planet
 func show_planet_img(idx,bPirate=false):
+	id = str(idx)
 	var path = "res://res/img/planet/{0}.png".format([idx])
 	if bPirate:
 		path = "res://res/img/planet/pirate.png"
@@ -80,16 +91,19 @@ func show_planet_img(idx,bPirate=false):
 	
 # load unit
 func show_unit_img(tid):
+	id = tid
 	var data = Design.getcfg("unit",tid)
 	set_img(data["Path"])
 	
 # load gem	
 func show_gem_img(tid):
+	id = tid
 	var data = Design.getcfg("gem",tid)
 	set_img(data["Path"])
 	
 # load blueprint
 func show_blueprint_img(tid):
+	id = tid
 	var data = Design.getcfg("blueprint",tid)
 	if data["Type"] != "wash":
 		var unitTid = data["RelateKey"]
@@ -100,13 +114,13 @@ func show_blueprint_img(tid):
 		set_img("res://res/img/reset.png")
 #endregion
 
-
-func _on_button_pressed():
-	C.dprint("debug","Grid:_on_button_pressed>>")
+# 左键点击
+func on_click_left():
+	C.dprint("debug","Grid:on_click_left>>")
 	if _bSelectDisable:
-		C.dprint("debug","Grid:_on_button_pressed>>select disabled")
+		C.dprint("debug","Grid:on_click_left>>select disabled")
 		return
-	if !button.button_pressed: # 如果这次是取消按下，那么就不再选中
+	if select.visible: # 如果选中框显示着，说明当前是选中状态
 		G.CrntSelectGrid = null
 		enable_select(false)
 		return
@@ -115,4 +129,33 @@ func _on_button_pressed():
 		old.enable_select(false)
 	enable_select(true)
 	G.CrntSelectGrid = self
-	C.dprint("debug","Grid:_on_button_pressed>>CrntSelectGrid:",G.CrntSelectGrid)
+	C.dprint("debug","Grid:on_click_left>>CrntSelectGrid:",G.CrntSelectGrid)
+
+# 右键点击
+func on_click_right():
+	C.dprint("debug","Grid:on_click_right>>")
+	# 尝试把物品移动到相应的位置上
+	var play = get_tree().get_root().get_node("Demo")
+	if play._crntStage == play.Stage.Forge:
+		G.ForgeAreaNode.assemble(_selectType,id)
+	elif play._crntStage == play.Stage.Fight:
+		#G.FightAreaNode.assemble(_selectType,id)
+		pass
+
+# TODO 没找到让按钮响应左键和右键的方法，先土方法处理
+var _btnflag:=0 # 1 表示左键，2 表示右键
+func _input(event):
+	if event is InputEventMouseButton and event.pressed:
+		_btnflag = 0
+		if event.button_index == MOUSE_BUTTON_LEFT:
+			_btnflag = 1
+		elif event.button_index == MOUSE_BUTTON_RIGHT:
+			_btnflag = 2
+		
+func _on_button_pressed():
+	#print("_btnflag",_btnflag,Input.get_mouse_button_mask(),button.button_mask)
+	if _btnflag == 1:
+		on_click_left()
+	elif _btnflag == 2:
+		on_click_right()
+	

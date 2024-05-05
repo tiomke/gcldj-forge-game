@@ -64,6 +64,7 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 toggle_mode = true
+button_mask = 3
 flat = true
 
 [node name="Mask" type="ColorRect" parent="."]
@@ -71,3 +72,5 @@ visible = false
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 color = Color(0.187176, 0.187176, 0.187176, 0.796078)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -3,6 +3,8 @@ extends Node
 
 var Player:Personal
 var CrntSelectGrid:Grid
+var ForgeAreaNode:ForgeArea
+#var GameplayNode:Gameplay
 
 @onready var PlanetScn:=preload("res://scene/item/planet.tscn")
 @onready var GridScn:=preload("res://scene/item/grid.tscn")

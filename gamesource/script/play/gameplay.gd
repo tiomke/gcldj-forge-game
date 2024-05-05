@@ -117,11 +117,11 @@ func update_personal_blueprint():
 		for i in range(craft_container.get_child_count()):
 			var child = craft_container.get_child(i)
 			var baseId = Design.BLUEPRINT_TYPE_NUM["craft"][0]
-			var size = Design.BLUEPRINT_TYPE_NUM["craft"][1]
+			var nsize = Design.BLUEPRINT_TYPE_NUM["craft"][1]
 			var bias = i+1
-			if bias > size:
+			if bias > nsize:
 				baseId = Design.BLUEPRINT_TYPE_NUM["levelup"][0]
-				bias -= size
+				bias -= nsize
 			baseId+=bias
 			var key = Design.get_key("blueprint",baseId)
 			var bOwn = G.Player.has_blueprint(key)
@@ -149,8 +149,8 @@ func update_personal_gem():
 	for i in range(gem_container.get_child_count()):
 		var child = gem_container.get_child(i)
 		var tid = Design.GEM_BASE_TID+i+1
-		child.show_gem_img(tid)
 		var key = Design.get_key("gem",tid)
+		child.show_gem_img(key)
 		var cnt = G.Player.get_gem_count(key)
 		child.set_num(cnt)
 			
@@ -217,9 +217,9 @@ func update_button():
 	# 战斗
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#G.GameplayNode = self
 	agenda_enter_planet()
 	update_personal_info()
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
