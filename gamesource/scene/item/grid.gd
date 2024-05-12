@@ -37,7 +37,7 @@ func get_parent_node():
 	return _parent
 
 func cleargrid():
-	C.dprint("debug","Grid:cleargrid>>",_tid,_id)
+	#C.dprint("debug","Grid:cleargrid>>",_tid,_id)
 	_tid = ""
 	_id = 0
 	num.text=""
@@ -93,6 +93,19 @@ func disable(bDisable=true):
 	
 
 #region 
+func show_img(ttid:int):
+	if ttid < Design.UNIT_BASE_TID:
+		show_planet_img(ttid)
+	elif ttid < Design.BLUEPRINT_BASE_TID:
+		var tid = Design.get_key("unit",ttid)
+		show_unit_img(tid)
+	elif ttid < Design.GEM_BASE_TID:
+		var tid = Design.get_key("blueprint",ttid)
+		show_blueprint_img(ttid)
+	elif ttid < Design.GROUND_BASE_TID:
+		var tid = Design.get_key("gem",ttid)
+		show_gem_img(tid)
+	
 # load planet
 func show_planet_img(idx,bPirate=false):
 	set_tid(str(idx))

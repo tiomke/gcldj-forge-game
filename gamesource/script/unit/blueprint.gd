@@ -51,8 +51,12 @@ static func craft(blueprintTid,unitlist=[]):
 		var unitTid = designData["OutputId"]
 		if unitTid and !unitTid.is_empty():
 			var unit = Unit.new(unitTid)
-			print("unit.id",unit.id)
+			#print("unit.id",unit.id)
 			G.Player.add_unit(unit)
+			var ttid = Design.get_tid("unit",unitTid)
+			var cfg = Design.getcfg("unit",unitTid)
+			var name = cfg["Name"]
+			PubSub.pub(EPubSub.GetItem,{"list":[{"ttid":ttid,"name":name,"tid":unitTid}]})
 	elif sType == "gradeup":
 		for unit in unitlist:
 			unit.upgrade()

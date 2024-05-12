@@ -20,7 +20,8 @@ class_name Gameplay extends Control
 @onready var speed_container = %SpeedHBoxContainer
 @onready var heavy_container = %HeavyHBoxContainer
 @onready var strategy_container = %StrategyHBoxContainer
-
+# 给物品界面
+@onready var get_item_page = %GetItemPage
 
 enum Stage{
 	Explore = 0, # 采集
@@ -171,11 +172,20 @@ func on_win(args):
 	agenda_enter_forge()
 #endregion
 
+func on_get_item(args):
+	prints("Demo:on_get_item>>args",args)
+	get_item_page.set_items(args["list"])
+	get_item_page.visible=true
 func personal_init_gems():
 	for i in range(Design.GEM_TYPE_NUM):
 		var tid = Design.GEM_BASE_TID + i + 1
 		var key = Design.get_key("gem",tid)
 		G.Player.add_gem(key,10)
+	for i in range(Design.UNIT_TYPE_NUM):
+		var tid = Design.UNIT_BASE_TID + i + 1
+		var key = Design.get_key("unit",tid)
+		var unit = Unit.new(key)
+		G.Player.add_unit(unit)
 	
 func switch_play_area():
 	main_tab_container.current_tab = _crntStage
@@ -265,7 +275,7 @@ func add_personal_unit(list,container):
 		var grid = G.GridScn.instantiate() as Grid
 		container.add_child(grid)
 		grid.set_select_type(C.GridSelectType.PersonalUnit)
-		prints("grid,unit.tid",grid,unit.tid,unit.id)
+		#prints("grid,unit.tid",grid,unit.tid,unit.id)
 		grid.show_unit_img(unit.tid)
 		grid.set_id(unit.id)
 	
@@ -294,6 +304,7 @@ func _ready():
 	update_personal_info()
 	PubSub.sub(EPubSub.Fight_Fail,Callable(self,"on_fail"))
 	PubSub.sub(EPubSub.Fight_Win,Callable(self,"on_win"))
+	PubSub.sub(EPubSub.GetItem,Callable(self,"on_get_item"))
 	
 
 

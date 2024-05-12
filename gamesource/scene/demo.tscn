@@ -93,39 +93,57 @@ columns = 3
 
 [node name="Grid1" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid9" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer/CraftContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="MarginContainer2" type="CenterContainer" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer"]
 visible = false
@@ -139,39 +157,57 @@ columns = 3
 
 [node name="Grid1" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Grid9" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer2/GradeupContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="MarginContainer3" type="CenterContainer" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer"]
 visible = false
@@ -185,7 +221,9 @@ columns = 3
 
 [node name="Grid1" parent="Container/MarginContainer/VBoxContainer/CenterContainer2/VBoxContainer/BlueprintTabContainer/MarginContainer3/WashContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
 _disable = true
+_bSelectDisable = null
 
 [node name="Label2" type="Label" parent="Container/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -210,42 +248,62 @@ columns = 5
 [node name="Grid" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid9" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid10" parent="Container/MarginContainer/VBoxContainer/MarginContainer/GemContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
 _selectType = 1
+_disable = null
+_bSelectDisable = null
 
 [node name="Label3" type="Label" parent="Container/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -322,27 +380,51 @@ layout_mode = 2
 
 [node name="Grid" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer/ScrollContainer/SpeedHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(42, 2.08165e-12)
@@ -372,27 +454,51 @@ layout_mode = 2
 
 [node name="Grid" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2/ScrollContainer/HeavyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(42, 2.08165e-12)
@@ -422,30 +528,57 @@ layout_mode = 2
 
 [node name="Grid" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid2" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid3" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid4" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid5" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid6" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid7" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid8" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Grid9" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3/ScrollContainer/StrategyHBoxContainer" instance=ExtResource("2_qov8d")]
 layout_mode = 2
+_selectType = null
+_disable = null
+_bSelectDisable = null
 
 [node name="Label2" type="Label" parent="Container/VBoxContainer2/HBoxContainer2/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(42, 2.08165e-12)
@@ -546,7 +679,6 @@ text = "继续航行"
 
 [node name="GetItemPage" parent="." instance=ExtResource("7_i2dgj")]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 offset_bottom = 540.0
 

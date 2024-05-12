@@ -44,8 +44,12 @@ static func _static_init():
 
 #region planet
 const MAX_PLANET_NUM:=3 # 一回合内行星的数量上限
-const GEM_TYPE_NUM:=9  # 宝石种类
+const UNIT_BASE_TID:=1000000 # 战舰id起始
+const BLUEPRINT_BASE_TID:=2000000 # 蓝图id起始
 const GEM_BASE_TID:=3000000 # 宝石id编号
+const GROUND_BASE_TID:=4000000 # 关卡id编号
+const GEM_TYPE_NUM:=9  # 宝石种类
+const UNIT_TYPE_NUM:=9 # 战舰种类
 const PLANET_NAMELIST:=["新伊卡鲁斯","塞拉菲斯","埃杜尔","阿玛尔","塔希提","卡尔","泰坦","亚历山大"
 ,"伊甸园","雷登","赛伯利亚","塔拉","艾达","萨尔","奥德赛","奥米斯特","帕尔维达","塞勒斯","塔拉金"
 ,"卡西","姆斯","伊娃","罗塔","艾玛","塞拉","奥斯卡","艾莉森","埃德加","欧文","塔伦"]
