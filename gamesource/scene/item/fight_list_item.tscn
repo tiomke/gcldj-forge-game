@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bi0os1ffum44y" path="res://scene/item/input_grid.tscn" id="2_2q7uy"]
 [ext_resource type="PackedScene" uid="uid://dcm2muivwrdo" path="res://scene/item/point.tscn" id="2_b6ep1"]
 
-[node name="FightUnit" type="HBoxContainer"]
+[node name="FightListItem" type="HBoxContainer"]
 theme_override_constants/separation = 20
 script = ExtResource("1_ld621")
 

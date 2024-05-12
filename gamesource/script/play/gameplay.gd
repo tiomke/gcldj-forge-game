@@ -161,13 +161,14 @@ func exec_forge():
 #endregion
 #region Fight
 func exec_fight():
-	#TODO 结算分数
-	var bWin = check_fight_win()
-	prints("bWin",bWin)
+	fight_area.play_fighting_anim()
+	
+func on_fail(args):
+	prints("on_fail",args)
 	agenda_enter_forge()
-#endregion
-#region Animation 动画表现
-
+func on_win(args):
+	prints("====>on_win",args)
+	agenda_enter_forge()
 #endregion
 
 func personal_init_gems():
@@ -291,6 +292,9 @@ func _ready():
 	personal_init_gems() # 开门送宝石
 	agenda_enter_planet()
 	update_personal_info()
+	PubSub.sub(EPubSub.Fight_Fail,Callable(self,"on_fail"))
+	PubSub.sub(EPubSub.Fight_Win,Callable(self,"on_win"))
+	
 
 
 func _on_button_1_pressed():

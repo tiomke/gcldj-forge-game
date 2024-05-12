@@ -1,4 +1,4 @@
-extends Control
+class_name Point extends Control
 
 @onready var pointNode = %Point
 @onready var animation_player :AnimationPlayer= %AnimationPlayer

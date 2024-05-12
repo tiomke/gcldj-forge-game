@@ -1,4 +1,4 @@
-extends HBoxContainer
+class_name FightListItem extends HBoxContainer
 
 @onready var unit_grid :Grid= %UnitGrid
 @onready var attack = %Attack
@@ -28,5 +28,10 @@ func set_unit(id):
 			pointNode.visible = true
 		else:
 			pointNode.visible = false
+	
+func shake_all_point():
+	for node in point_list:
+		if node.visible:
+			(node as Point).shake()
 	
 	
