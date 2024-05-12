@@ -101,7 +101,7 @@ func show_img(ttid:int):
 		show_unit_img(tid)
 	elif ttid < Design.GEM_BASE_TID:
 		var tid = Design.get_key("blueprint",ttid)
-		show_blueprint_img(ttid)
+		show_blueprint_img(tid)
 	elif ttid < Design.GROUND_BASE_TID:
 		var tid = Design.get_key("gem",ttid)
 		show_gem_img(tid)
