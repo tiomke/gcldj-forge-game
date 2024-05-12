@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn1km1rfhjiif"]
+
+[ext_resource type="Script" path="res://scene/item/fight_list_item.gd" id="1_ld621"]
+[ext_resource type="PackedScene" uid="uid://bi0os1ffum44y" path="res://scene/item/input_grid.tscn" id="2_2q7uy"]
+[ext_resource type="PackedScene" uid="uid://dcm2muivwrdo" path="res://scene/item/point.tscn" id="2_b6ep1"]
+
+[node name="FightUnit" type="HBoxContainer"]
+theme_override_constants/separation = 20
+script = ExtResource("1_ld621")
+
+[node name="UnitGrid" parent="." instance=ExtResource("2_2q7uy")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "战力"
+
+[node name="Attack" type="Label" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "10000"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Point1" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Point2" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Point3" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Point4" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Point5" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Point6" parent="VBoxContainer/ScrollContainer/HBoxContainer" instance=ExtResource("2_b6ep1")]
+unique_name_in_owner = true
+layout_mode = 2

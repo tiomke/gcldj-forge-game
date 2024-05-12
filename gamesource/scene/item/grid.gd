@@ -15,6 +15,7 @@ class_name Grid extends Control
 @export var _disable:bool
 @export var _bSelectDisable:bool
 
+
 var _tid:String
 var _id:int
 
@@ -89,6 +90,7 @@ func disable_select():
 func disable(bDisable=true):
 	button.disabled = bDisable
 	mask.visible = bDisable
+	
 
 #region 
 # load planet

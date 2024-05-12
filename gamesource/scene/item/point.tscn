@@ -1,0 +1,141 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcm2muivwrdo"]
+
+[ext_resource type="Script" path="res://scene/item/point.gd" id="1_elfbk"]
+[ext_resource type="Texture2D" uid="uid://6axlgcjlmcv5" path="res://res/img/Orbs.png" id="2_jxy88"]
+
+[sub_resource type="Animation" id="Animation_mvlt4"]
+resource_name = "point_shake"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-6, -2), Vector2(6, 2), Vector2(-1, 6), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ccg3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4uum"]
+_data = {
+"RESET": SubResource("Animation_ccg3q"),
+"point_shake": SubResource("Animation_mvlt4")
+}
+
+[node name="Point" type="Control"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 36.0
+offset_bottom = 36.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_elfbk")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+offset_right = 36.0
+offset_bottom = 36.0
+
+[node name="Frame" type="ColorRect" parent="CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+color = Color(0.270588, 0.254902, 0.427451, 1)
+
+[node name="Select" type="ColorRect" parent="CenterContainer"]
+visible = false
+custom_minimum_size = Vector2(34, 34)
+layout_mode = 2
+color = Color(0.85098, 0.905882, 0.388235, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="CenterContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.364706, 0.345098, 0.556863, 1)
+
+[node name="BackImg" type="TextureRect" parent="CenterContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="Img" type="TextureRect" parent="CenterContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("2_jxy88")
+expand_mode = 1
+
+[node name="Mask" type="ColorRect" parent="CenterContainer/MarginContainer/MarginContainer"]
+custom_minimum_size = Vector2(15, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.368627, 0.803922, 0.94902, 1)
+
+[node name="Num" type="Label" parent="CenterContainer/MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_outline_color = Color(0.266667, 0.254902, 0.415686, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+text = "II"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Point" type="Label" parent="CenterContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 24
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CenterContainer"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_w4uum")
+}
+
+[node name="Button" type="Button" parent="CenterContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+flat = true
+
+[connection signal="animation_finished" from="CenterContainer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]

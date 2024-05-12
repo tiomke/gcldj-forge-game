@@ -1,24 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bn6b3x6ejxiw4"]
+[gd_scene load_steps=2 format=3 uid="uid://cttd0min5t02p"]
 
-[ext_resource type="Script" path="res://scene/item/planet_grid.gd" id="1_vytow"]
-[ext_resource type="Texture2D" uid="uid://ceuh8m6la44uk" path="res://res/img/planet/pirate.png" id="2_s0043"]
+[ext_resource type="Script" path="res://scene/item/fight_unit.gd" id="1_5ca6b"]
 
-[node name="PlanetGrid" type="CenterContainer"]
-custom_minimum_size = Vector2(128, 128)
+[node name="FightUnit" type="CenterContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_vytow")
+script = ExtResource("1_5ca6b")
 
 [node name="Frame" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
-color = Color(0.698039, 0.694118, 0.858824, 1)
+color = Color(0.270588, 0.254902, 0.427451, 1)
 
 [node name="Select" type="ColorRect" parent="."]
 visible = false
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 color = Color(0.85098, 0.905882, 0.388235, 1)
 
@@ -31,7 +29,7 @@ theme_override_constants/margin_bottom = 2
 
 [node name="Background" type="ColorRect" parent="MarginContainer"]
 layout_mode = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.364706, 0.345098, 0.556863, 1)
 
 [node name="BackImg" type="TextureRect" parent="MarginContainer"]
 layout_mode = 2
@@ -39,19 +37,17 @@ expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 
 [node name="Img" type="TextureRect" parent="MarginContainer/MarginContainer"]
-custom_minimum_size = Vector2(116, 116)
+custom_minimum_size = Vector2(58, 58)
 layout_mode = 2
-texture = ExtResource("2_s0043")
 expand_mode = 1
 
 [node name="Num" type="Label" parent="MarginContainer"]
-visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0.266667, 0.254902, 0.415686, 1)
@@ -62,14 +58,15 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="."]
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
+toggle_mode = true
 button_mask = 3
 flat = true
 
 [node name="Mask" type="ColorRect" parent="."]
 visible = false
-custom_minimum_size = Vector2(128, 128)
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 color = Color(0.187176, 0.187176, 0.187176, 0.796078)
 

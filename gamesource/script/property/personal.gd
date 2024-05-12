@@ -32,6 +32,8 @@ func rm_unit(unit):
 	_unitDict[unit.id]=null
 func get_unit(id):
 	return _unitDict.get(id)
+func get_units():
+	return _unitDict.values()
 	
 
 	

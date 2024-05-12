@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxy8f0d78pgvd"]
+
+[ext_resource type="PackedScene" uid="uid://bvopivbh1yfdc" path="res://scene/item/item_get.tscn" id="1_cx43g"]
+[ext_resource type="Script" path="res://scene/area/get_item_page.gd" id="1_okm6s"]
+
+[node name="GetItem" type="CenterContainer"]
+offset_right = 960.0
+offset_bottom = 541.0
+script = ExtResource("1_okm6s")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+color = Color(0.184314, 0.184314, 0.184314, 0.909804)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.996078, 0.976471, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 50
+text = "成功获得！"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="GetItem1" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_cx43g")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GetItem2" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_cx43g")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="GetItem3" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("1_cx43g")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(960, 540)
+layout_mode = 2
+action_mode = 0
+button_mask = 3
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

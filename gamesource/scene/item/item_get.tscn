@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvopivbh1yfdc"]
+
+[ext_resource type="PackedScene" uid="uid://bn6b3x6ejxiw4" path="res://scene/item/planet_grid.tscn" id="1_s2bxp"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+theme_override_constants/separation = 30
+
+[node name="PlanetGrid" parent="." instance=ExtResource("1_s2bxp")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "蓝色宝石"
+horizontal_alignment = 1

@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://behhqb6iqyj2g"]
+
+[ext_resource type="Script" path="res://scene/area/fight_area.gd" id="1_lwhyr"]
+[ext_resource type="PackedScene" uid="uid://cn1km1rfhjiif" path="res://scene/item/fight_list_item.tscn" id="2_2dapv"]
+[ext_resource type="PackedScene" uid="uid://bn6b3x6ejxiw4" path="res://scene/item/planet_grid.tscn" id="3_qo7m5"]
+
+[node name="FightArea" type="CenterContainer"]
+offset_right = 680.0
+offset_bottom = 280.0
+script = ExtResource("1_lwhyr")
+
+[node name="Background" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(680, 280)
+layout_mode = 2
+color = Color(0.364706, 0.345098, 0.556863, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(680, 280)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FightUnits" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FightUnits"]
+custom_minimum_size = Vector2(300, 2.08165e-12)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="FightUnit1" parent="HBoxContainer/FightUnits/VBoxContainer" instance=ExtResource("2_2dapv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FightUnit2" parent="HBoxContainer/FightUnits/VBoxContainer" instance=ExtResource("2_2dapv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="FightUnit3" parent="HBoxContainer/FightUnits/VBoxContainer" instance=ExtResource("2_2dapv")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="EnemyTarget" type="CenterContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer" type="VBoxContainer" parent="HBoxContainer/EnemyTarget"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/EnemyTarget/BoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/EnemyTarget/BoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "防御"
+
+[node name="EnemyHp" type="Label" parent="HBoxContainer/EnemyTarget/BoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "1000000000"
+
+[node name="EnemyGrid" parent="HBoxContainer/EnemyTarget/BoxContainer" instance=ExtResource("3_qo7m5")]
+unique_name_in_owner = true
+layout_mode = 2

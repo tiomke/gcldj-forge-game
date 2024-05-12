@@ -4,7 +4,6 @@ class_name Planet extends MarginContainer
 @onready var planet_grid :Grid= %PlanetGrid
 @onready var gem_list = %GemList
 
-
 var _gemlist
 var _blueprintlist
 var _name:=""
@@ -44,7 +43,11 @@ func update_info():
 		grid.set_select_type(C.GridSelectType.ExploreGem)
 		grid.set_num(num)
 		grid.show_gem_img(tid)
-		
+func set_enemy_base():
+	planet_name.text += "（海盗）"
+	planet_grid.set_img("res://res/img/enemybase.png")
+	planet_grid.set_planet_type(PlanetGrid.PlanetType.Enemy)
+	
 # 把物品掉落给玩家
 func drop_item():
 	C.dprint("debug","Planet:drop_item>>")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://8xfood5i1s6i"]
 
 [ext_resource type="Script" path="res://scene/item/grid.gd" id="1_1bd4m"]
-[ext_resource type="Texture2D" uid="uid://b4knox7g44ofw" path="res://res/img/gem/blue.png" id="2_u6am6"]
+[ext_resource type="Texture2D" uid="uid://6axlgcjlmcv5" path="res://res/img/Orbs.png" id="2_ji3a8"]
 
 [node name="Center" type="CenterContainer"]
 custom_minimum_size = Vector2(36, 36)
@@ -47,7 +47,7 @@ theme_override_constants/margin_bottom = 2
 [node name="Img" type="TextureRect" parent="MarginContainer/MarginContainer"]
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
-texture = ExtResource("2_u6am6")
+texture = ExtResource("2_ji3a8")
 expand_mode = 1
 
 [node name="Num" type="Label" parent="MarginContainer"]
