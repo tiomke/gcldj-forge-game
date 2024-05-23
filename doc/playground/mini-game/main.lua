@@ -54,6 +54,7 @@ function love.update(dt)
     Slab.BeginWindow('Level',{Title = "Level:"..LevelInfo.CrntRound})
     local stage = LevelInfo.RoundInfo.TurnInfo.Stage
     Slab.Text("Stage:"..EStage[stage])
+    Slab.Text("Turn:"..LevelInfo.RoundInfo.CrntTurn)
     if stage == EStage.Select then
         -- 列出各个选择
         local list = LevelInfo.RoundInfo.TurnInfo.PlanetList
