@@ -1,0 +1,181 @@
+[gd_scene load_steps=5 format=3 uid="uid://p0lxu66ht6hl"]
+
+[ext_resource type="PackedScene" uid="uid://bd2784e2xd1h6" path="res://unit.tscn" id="1_gyudg"]
+[ext_resource type="Script" path="res://gameplay.gd" id="1_it7gh"]
+[ext_resource type="Script" path="res://addons/preview/fight_page.gd" id="1_v7s43"]
+[ext_resource type="Script" path="res://card.gd" id="3_x4wb4"]
+
+[node name="Demo" type="Node2D"]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_it7gh")
+
+[node name="UI" type="Control" parent="UILayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FightPage" type="VBoxContainer" parent="UILayer/UI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 20
+script = ExtResource("1_v7s43")
+
+[node name="FightArea" type="HBoxContainer" parent="UILayer/UI/FightPage"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="PlayerArea" parent="UILayer/UI/FightPage/FightArea" instance=ExtResource("1_gyudg")]
+unique_name_in_owner = true
+layout_mode = 2
+_title = "玩家信息"
+
+[node name="EnemyArea" parent="UILayer/UI/FightPage/FightArea" instance=ExtResource("1_gyudg")]
+unique_name_in_owner = true
+layout_mode = 2
+_title = "敌方信息"
+
+[node name="CardArea" type="VBoxContainer" parent="UILayer/UI/FightPage"]
+layout_mode = 2
+
+[node name="Cards" type="HBoxContainer" parent="UILayer/UI/FightPage/CardArea"]
+layout_mode = 2
+
+[node name="Card1" type="Button" parent="UILayer/UI/FightPage/CardArea/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "我是卡牌"
+alignment = 0
+script = ExtResource("3_x4wb4")
+
+[node name="Card2" type="Button" parent="UILayer/UI/FightPage/CardArea/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "我是卡牌"
+alignment = 0
+script = ExtResource("3_x4wb4")
+
+[node name="Card3" type="Button" parent="UILayer/UI/FightPage/CardArea/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "我是卡牌"
+alignment = 0
+script = ExtResource("3_x4wb4")
+
+[node name="Card4" type="Button" parent="UILayer/UI/FightPage/CardArea/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "我是卡牌"
+alignment = 0
+script = ExtResource("3_x4wb4")
+
+[node name="Card5" type="Button" parent="UILayer/UI/FightPage/CardArea/Cards"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "我是卡牌"
+alignment = 0
+script = ExtResource("3_x4wb4")
+
+[node name="Point" type="Label" parent="UILayer/UI/FightPage/CardArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "剩余X点"
+
+[node name="CardNum" type="Label" parent="UILayer/UI/FightPage/CardArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "卡牌数量：20"
+
+[node name="TurnEndButton" type="Button" parent="UILayer/UI/FightPage"]
+layout_mode = 2
+text = "结束回合"
+
+[node name="ForgePage" type="VBoxContainer" parent="UILayer/UI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 442.0
+offset_bottom = 150.0
+
+[node name="ElementArea" type="HBoxContainer" parent="UILayer/UI/ForgePage"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="FireElement" type="Label" parent="UILayer/UI/ForgePage/ElementArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "火：10个"
+
+[node name="WaterElement" type="Label" parent="UILayer/UI/ForgePage/ElementArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "水：10个"
+
+[node name="MetalElement" type="Label" parent="UILayer/UI/ForgePage/ElementArea"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "金：10个"
+
+[node name="ForgeTable" type="HBoxContainer" parent="UILayer/UI/ForgePage"]
+layout_mode = 2
+
+[node name="Slot1" type="OptionButton" parent="UILayer/UI/ForgePage/ForgeTable"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "test1"
+popup/item_0/id = 0
+popup/item_1/text = "test2"
+popup/item_1/id = 1
+
+[node name="Slot2" type="OptionButton" parent="UILayer/UI/ForgePage/ForgeTable"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "test1"
+popup/item_0/id = 0
+popup/item_1/text = "test2"
+popup/item_1/id = 1
+
+[node name="Slot3" type="OptionButton" parent="UILayer/UI/ForgePage/ForgeTable"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "test1"
+popup/item_0/id = 0
+popup/item_1/text = "test2"
+popup/item_1/id = 1
+
+[node name="Slot4" type="OptionButton" parent="UILayer/UI/ForgePage/ForgeTable"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "test1"
+popup/item_0/id = 0
+popup/item_1/text = "test2"
+popup/item_1/id = 1
+
+[node name="Slot5" type="OptionButton" parent="UILayer/UI/ForgePage/ForgeTable"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "test1"
+popup/item_0/id = 0
+popup/item_1/text = "test2"
+popup/item_1/id = 1
+
+[node name="ResultCard" type="Label" parent="UILayer/UI/ForgePage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "合成后的卡牌效果"
+
+[node name="ForgeButton" type="Button" parent="UILayer/UI/ForgePage"]
+layout_mode = 2
+text = "确认合成"
+
+[connection signal="pressed" from="UILayer/UI/FightPage/TurnEndButton" to="UILayer/UI/FightPage" method="_on_turn_end_button_pressed"]
